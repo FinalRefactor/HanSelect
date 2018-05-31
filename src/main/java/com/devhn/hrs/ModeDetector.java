@@ -6,12 +6,12 @@ class ModeDetector {
 
         switch (mode) {
             case "섞기":
-                Util.MODE = "섞기";
+                Util.MODE = HanSelectMode.SHUFFLE;
                 mp.play(Util.MODE);
                 break;
 
             case "뽑기":
-                Util.MODE = "뽑기";
+                Util.MODE = HanSelectMode.SELECT;
                 mp.play(Util.MODE);
                 break;
 

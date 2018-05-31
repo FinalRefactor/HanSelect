@@ -3,9 +3,9 @@ package com.devhn.hrs;
 import java.util.*;
 
 class ModePlayer {
-    void play(String mode) {
+    void play(HanSelectMode mode) {
         try (Scanner scanner = new Scanner(System.in)) {
-            if (mode.equals("섞기")) {
+            if (mode == HanSelectMode.SHUFFLE) {
                 System.out.println("섞을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
 
                 String[] nameinput = scanner.nextLine().split(", ");
@@ -17,7 +17,7 @@ class ModePlayer {
 
                 System.out.println(list);
 
-            } else if (mode.equals("뽑기")) {
+            } else if (mode == HanSelectMode.SELECT) {
                 System.out.println("뽑을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
 
                 String[] nameinput = scanner.nextLine().split(", ");
