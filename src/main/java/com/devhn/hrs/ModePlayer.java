@@ -4,29 +4,29 @@ import java.util.*;
 
 class ModePlayer {
     void play(String mode) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            if (mode.equals("섞기")) {
+                System.out.println("섞을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
 
-        if (mode.equals("섞기")) {
-            System.out.println("섞을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
+                String[] nameinput = scanner.nextLine().split(", ");
 
-            String[] nameinput = scanner.nextLine().split(", ");
+                System.out.println("입력되었습니다. 다음은 섞기 결과입니다.");
 
-            System.out.println("입력되었습니다. 다음은 섞기 결과입니다.");
+                List<String> list = new ArrayList<>(Arrays.asList(nameinput));
+                Collections.shuffle(list);
 
-            List<String> list = new ArrayList<>(Arrays.asList(nameinput));
-            Collections.shuffle(list);
+                System.out.println(list);
 
-            System.out.println(list);
+            } else if (mode.equals("뽑기")) {
+                System.out.println("뽑을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
 
-        } else if (mode.equals("뽑기")) {
-            System.out.println("뽑을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
+                String[] nameinput = scanner.nextLine().split(", ");
 
-            String[] nameinput = scanner.nextLine().split(", ");
+                System.out.println("입력되었습니다. 다음은 뽑기 결과입니다.");
 
-            System.out.println("입력되었습니다. 다음은 뽑기 결과입니다.");
+                System.out.println("뽑힌 사람: " + getRandArr(nameinput));
 
-            System.out.println("뽑힌 사람: " + getRandArr(nameinput));
-
+            }
         }
     }
 
@@ -39,6 +39,6 @@ class ModePlayer {
     }
 
     public static int getRand(int from, int to) {
-        return (int)(Math.random() * (Math.abs(to - from) + 1)) + Math.min(from, to);
+        return (int) (Math.random() * (Math.abs(to - from) + 1)) + Math.min(from, to);
     }
 }
