@@ -30,15 +30,15 @@ class ModePlayer {
         }
     }
 
-    public static String getRandArr(String[] arr) {
+    private static String getRandArr(String[] arr) {
         return arr[getRand(arr.length - 1)];
     }
 
-    public static int getRand(int n) {
+    private static int getRand(int n) {
         return getRand(0, n);
     }
 
-    public static int getRand(int from, int to) {
+    private static int getRand(int from, int to) {
         return (int) (Math.random() * (Math.abs(to - from) + 1)) + Math.min(from, to);
     }
 }
