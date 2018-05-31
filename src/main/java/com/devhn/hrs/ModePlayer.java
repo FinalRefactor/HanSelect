@@ -1,8 +1,10 @@
 package com.devhn.hrs;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 class ModePlayer {
+
     void play(HanSelectMode mode) {
         try (Scanner scanner = new Scanner(System.in)) {
             if (mode == HanSelectMode.SHUFFLE) {
@@ -39,6 +41,12 @@ class ModePlayer {
     }
 
     private static int getRand(int from, int to) {
-        return (int) (Math.random() * (Math.abs(to - from) + 1)) + Math.min(from, to);
+        if (from > to) {
+            throw new IllegalArgumentException("from must be smaller than to");
+        } else if (from == to) {
+            return to;
+        } else {
+            return ThreadLocalRandom.current().nextInt(to - from) + from;
+        }
     }
 }
