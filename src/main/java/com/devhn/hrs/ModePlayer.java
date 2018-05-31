@@ -37,16 +37,6 @@ class ModePlayer {
     }
 
     private static int getRand(int n) {
-        return getRand(0, n);
-    }
-
-    private static int getRand(int from, int to) {
-        if (from > to) {
-            throw new IllegalArgumentException("from must be smaller than to");
-        } else if (from == to) {
-            return to;
-        } else {
-            return ThreadLocalRandom.current().nextInt(to - from) + from;
-        }
+        return ThreadLocalRandom.current().nextInt(n);
     }
 }
