@@ -8,11 +8,11 @@ class ModePlayer {
     void play(HanSelectMode mode) {
         try (Scanner scanner = new Scanner(System.in)) {
             if (mode == HanSelectMode.SHUFFLE) {
-                System.out.println("섞을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
+                System.out.println(Static.getString("message.require-shuffle-target"));
 
                 String[] nameinput = scanner.nextLine().split(", ");
 
-                System.out.println("입력되었습니다. 다음은 섞기 결과입니다.");
+                System.out.println(Static.getString("message.shuffle-result"));
 
                 List<String> list = new ArrayList<>(Arrays.asList(nameinput));
                 Collections.shuffle(list);
@@ -20,13 +20,13 @@ class ModePlayer {
                 System.out.println(list);
 
             } else if (mode == HanSelectMode.SELECT) {
-                System.out.println("뽑을 이름을 입력하여 주세요. (이름은 ',' 콤마로 구분합니다.)");
+                System.out.println(Static.getString("message.require-select-target"));
 
                 String[] nameinput = scanner.nextLine().split(", ");
 
-                System.out.println("입력되었습니다. 다음은 뽑기 결과입니다.");
+                System.out.println(Static.getString("message.select-result"));
 
-                System.out.println("뽑힌 사람: " + getRandArr(nameinput));
+                System.out.printf(Static.getString("message.selected") + "\n", getRandArr(nameinput));
 
             }
         }

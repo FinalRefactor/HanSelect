@@ -4,20 +4,17 @@ class ModeDetector {
     void changeModeTo(String mode) {
         ModePlayer mp = new ModePlayer();
 
-        switch (mode) {
-            case "섞기":
-                Util.MODE = HanSelectMode.SHUFFLE;
-                mp.play(Util.MODE);
-                break;
+        if (Static.getString("mode.shuffle").equalsIgnoreCase(mode)) {
+            Util.MODE = HanSelectMode.SHUFFLE;
+            mp.play(Util.MODE);
 
-            case "뽑기":
-                Util.MODE = HanSelectMode.SELECT;
-                mp.play(Util.MODE);
-                break;
+        } else if (Static.getString("mode.select").equalsIgnoreCase(mode)) {
+            Util.MODE = HanSelectMode.SELECT;
+            mp.play(Util.MODE);
 
-            default:
-                System.out.println("Error: #00002 - 잘못된 키워드를 입력하셨습니다.");
-                break;
+        } else {
+            System.out.println(Static.formatError(2, "invalid-keyword"));
+
         }
     }
 }

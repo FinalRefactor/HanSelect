@@ -1,8 +1,11 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '2.0.3'
+}
+
 group 'com.devhn'
 version '0.1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'application'
 
 mainClassName = 'com.devhn.hrs.HanSelect'
 
@@ -10,10 +13,18 @@ mainClassName = 'com.devhn.hrs.HanSelect'
 
 repositories {
     mavenCentral()
+    maven {
+        name = 'jitpack'
+        url = 'https://jitpack.io'
+    }
 }
 
 dependencies {
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    implementation group: 'com.github.joconner', name: 'enhanced-resources', version: '8fc547aefd'
+}
+
+run {
+    standardInput = System.in
 }
 
 jar {

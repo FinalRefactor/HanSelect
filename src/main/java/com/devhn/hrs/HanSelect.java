@@ -6,9 +6,9 @@ public class HanSelect {
     public static void main(String[] args) {
         ModeDetector md = new ModeDetector();
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("불규칙 추첨기 - DevHN");
-            System.out.println("아래의 키워드 중 하나를 입력해 주세요.");
-            System.out.println("섞기 / 뽑기");
+            System.out.println(Static.getString("message.title") + " - DevHN");
+            System.out.println(Static.getString("message.select-keyword"));
+            System.out.printf("%s / %s\n", Static.getString("mode.shuffle"), Static.getString("mode.select"));
 
             String input = scanner.nextLine();
             md.changeModeTo(input);
