@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class HanSelect {
     public static void main(String[] args) {
-        init();
-    }
-
-    public static void init() {
         ModeDetector md = new ModeDetector();
         Scanner scanner = new Scanner(System.in);
 
