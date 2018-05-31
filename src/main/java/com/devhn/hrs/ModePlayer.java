@@ -10,11 +10,11 @@ class ModePlayer {
             if (mode == HanSelectMode.SHUFFLE) {
                 System.out.println(Static.getString("message.require-shuffle-target"));
 
-                String[] nameinput = scanner.nextLine().split(",");
+                String[] nameInput = scanner.nextLine().split(",");
 
                 System.out.println(Static.getString("message.shuffle-result"));
 
-                List<String> list = new ArrayList<>(Arrays.asList(nameinput));
+                List<String> list = new ArrayList<>(Arrays.asList(nameInput));
                 Collections.shuffle(list);
 
                 System.out.println(list);
@@ -22,11 +22,11 @@ class ModePlayer {
             } else if (mode == HanSelectMode.SELECT) {
                 System.out.println(Static.getString("message.require-select-target"));
 
-                String[] nameinput = scanner.nextLine().split(",");
+                String[] nameInput = scanner.nextLine().split(",");
 
                 System.out.println(Static.getString("message.select-result"));
 
-                System.out.printf(Static.getString("message.selected") + "\n", getRandArr(nameinput));
+                System.out.printf(Static.getString("message.selected") + "\n", getRandArr(nameInput));
 
             }
         }
