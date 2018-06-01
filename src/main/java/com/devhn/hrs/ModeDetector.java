@@ -1,6 +1,6 @@
 package com.devhn.hrs;
 
-class ModeDetector {
+final class ModeDetector {
     void changeModeTo(String mode) {
         ModePlayer mp = new ModePlayer();
 

@@ -4,7 +4,7 @@ import com.joconner.i18n.Utf8ResourceBundleControl;
 
 import java.util.ResourceBundle;
 
-public class Static {
+public final class Static {
     private Static() {
         throw new UnsupportedOperationException("You cannot instantiate Static");
     }

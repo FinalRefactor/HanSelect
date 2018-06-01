@@ -2,7 +2,7 @@ package com.devhn.hrs;
 
 import java.util.Scanner;
 
-public class HanSelect {
+public final class HanSelect {
     public static void main(String[] args) {
         ModeDetector md = new ModeDetector();
         try (Scanner scanner = new Scanner(System.in)) {

@@ -3,7 +3,7 @@ package com.devhn.hrs;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-class ModePlayer {
+final class ModePlayer {
 
     void play(HanSelectMode mode) {
         try (Scanner scanner = new Scanner(System.in)) {
