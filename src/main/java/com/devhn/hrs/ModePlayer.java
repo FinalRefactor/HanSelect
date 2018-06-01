@@ -1,11 +1,12 @@
 package com.devhn.hrs;
 
+import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 final class ModePlayer {
 
-    void play(HanSelectMode mode) {
+    void play(@Nonnull HanSelectMode mode) {
         try (Scanner scanner = new Scanner(System.in)) {
             if (mode == HanSelectMode.SHUFFLE) {
                 System.out.println(Static.getString("message.require-shuffle-target"));
@@ -32,7 +33,7 @@ final class ModePlayer {
         }
     }
 
-    private static String getRandArr(String[] arr) {
+    private static String getRandArr(@Nonnull String[] arr) {
         return arr[getRand(arr.length - 1)];
     }
 

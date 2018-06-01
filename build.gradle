@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
     implementation group: 'com.github.joconner', name: 'enhanced-resources', version: '8fc547aefd'
 }
 

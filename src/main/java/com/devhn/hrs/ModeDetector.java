@@ -1,7 +1,9 @@
 package com.devhn.hrs;
 
+import javax.annotation.Nullable;
+
 final class ModeDetector {
-    void changeModeTo(String mode) {
+    void changeModeTo(@Nullable String mode) {
         ModePlayer mp = new ModePlayer();
 
         if (Static.getString("mode.shuffle").equalsIgnoreCase(mode)) {
